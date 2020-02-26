@@ -13,13 +13,10 @@ class DecisionTreeApp {
     public static void main(String[] args) throws IOException {
 
         newTree = new DecisionTree();
-
         generateTree();
-
         System.out.println("\nOUTPUT DECISION TREE");
         System.out.println("====================");
         newTree.outputBinTree();
-
         queryTree();
     }
 
@@ -46,9 +43,9 @@ class DecisionTreeApp {
     static void optionToExit() throws IOException {
         System.out.println("Exit? (enter \"Yes\" or \"No\")");
         String answer = keyboardInput.readLine();
-        if (answer.equals("Yes")) return;
+        if (answer.toLowerCase().equals("Yes")) return;
         else {
-            if (answer.equals("No")) queryTree();
+            if (answer.toLowerCase().equals("No")) queryTree();
             else {
                 System.out.println("ERROR: Must answer \"Yes\" or \"No\"");
                 optionToExit();
