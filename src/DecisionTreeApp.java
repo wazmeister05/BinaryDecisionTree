@@ -4,10 +4,11 @@
 // Department of Computer Science, University of Liverpool
 
 import java.io.*;
+import java.util.Scanner;
 
 class DecisionTreeApp {
 
-    static BufferedReader keyboardInput = new BufferedReader(new InputStreamReader(System.in));
+    static Scanner scanner = new Scanner(System.in);
     static DecisionTree newTree;
 
     public static void main(String[] args) throws IOException {
@@ -42,7 +43,7 @@ class DecisionTreeApp {
 
     static void optionToExit() throws IOException {
         System.out.println("Exit? (enter \"Yes\" or \"No\")");
-        String answer = keyboardInput.readLine();
+        String answer = scanner.next();
         if (answer.toLowerCase().equals("yes")) return;
         else {
             if (answer.toLowerCase().equals("no")) queryTree();

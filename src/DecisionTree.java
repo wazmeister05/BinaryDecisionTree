@@ -4,6 +4,7 @@
 // Department of Computer Science, University of Liverpool
 
 import java.io.*;
+import java.util.Scanner;
 
 class DecisionTree {
 
@@ -20,13 +21,21 @@ class DecisionTree {
         }
     }
 
+    static Scanner scanner = new Scanner(System.in);
+    private BinTree rootNode = null;
 
+    public BinTree getRoot(){
+        return rootNode;
+    }
 
-
-
-    static BufferedReader    keyboardInput = new
-            BufferedReader(new InputStreamReader(System.in));
-    BinTree rootNode = null;
+    public boolean checkRoot(){
+        if(getRoot() == null){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
 
     public DecisionTree() {
     }
@@ -65,6 +74,9 @@ class DecisionTree {
         }
         else System.out.println("Node " + existingNodeID + " not found");
     }
+
+
+
 
     private boolean searchTreeAndAddYesNode(BinTree currentNode,
                                             int existingNodeID, int newNodeID, String newQuestAns) {
@@ -164,7 +176,7 @@ class DecisionTree {
 
     private void askQuestion(BinTree currentNode) throws IOException {
         System.out.println(currentNode.questOrAns + " (enter \"Yes\" or \"No\")");
-        String answer = keyboardInput.readLine();
+        String answer = scanner.next();
         if (answer.toLowerCase().equals("yes")) queryBinTree(currentNode.yesBranch);
         else {
             if (answer.toLowerCase().equals("no")) queryBinTree(currentNode.noBranch);
