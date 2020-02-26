@@ -43,9 +43,9 @@ class DecisionTreeApp {
     static void optionToExit() throws IOException {
         System.out.println("Exit? (enter \"Yes\" or \"No\")");
         String answer = keyboardInput.readLine();
-        if (answer.toLowerCase().equals("Yes")) return;
+        if (answer.toLowerCase().equals("yes")) return;
         else {
-            if (answer.toLowerCase().equals("No")) queryTree();
+            if (answer.toLowerCase().equals("no")) queryTree();
             else {
                 System.out.println("ERROR: Must answer \"Yes\" or \"No\"");
                 optionToExit();

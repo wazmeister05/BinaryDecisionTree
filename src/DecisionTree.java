@@ -7,10 +7,10 @@ import java.io.*;
 
 class DecisionTree {
 
-    private class BinTree {
+    private static class BinTree {
 
         private int     nodeID;
-        private String  questOrAns = null;
+        private String  questOrAns;
         private BinTree yesBranch  = null;
         private BinTree noBranch   = null;
 
